@@ -27,68 +27,68 @@ import Character.Customer;
 import Character.Servant;
 
 /**
- * Ö÷Àà
+ * ä¸»ç±»
  */
 public class MainFrame  {
-	static JFrame mainframe = new JFrame("°×æÎĞìºÆÌï");// ´´½¨´°¿Ú²¢ÉèÖÃ±êÌâ
-	static Container cc;// ´´½¨ÈİÆ÷Ó¦ÓÃ
-	JLabel name = new JLabel("ĞÕÃû£º " + Servant.xu.name);// ÉèÖÃĞÕÃû±êÇ©
-	JLabel honey = new JLabel("Ç×ÃÜ¶È: " + Servant.xu.honey);// ÉèÖÃÇ×ÃÜ¶È±êÇ©
-	JLabel cost = new JLabel("»¨·Ñ: " + Servant.xu.cost);// ÉèÖÃ»¨·Ñ±êÇ©
-	JLabel money = new JLabel("½ğÇ®£º " + Customer.chu.money);// ÉèÖÃ½ğÇ®±êÇ©
+	static JFrame mainframe = new JFrame("ç™½å«–å¾æµ©ç”°");// åˆ›å»ºçª—å£å¹¶è®¾ç½®æ ‡é¢˜
+	static Container cc;// åˆ›å»ºå®¹å™¨åº”ç”¨
+	JLabel name = new JLabel("å§“åï¼š " + Servant.xu.name);// è®¾ç½®å§“åæ ‡ç­¾
+	JLabel honey = new JLabel("äº²å¯†åº¦: " + Servant.xu.honey);// è®¾ç½®äº²å¯†åº¦æ ‡ç­¾
+	JLabel cost = new JLabel("èŠ±è´¹: " + Servant.xu.cost);// è®¾ç½®èŠ±è´¹æ ‡ç­¾
+	JLabel money = new JLabel("é‡‘é’±ï¼š " + Customer.chu.money);// è®¾ç½®é‡‘é’±æ ‡ç­¾
 	boolean b = true;
 	File f4 = null;
 
 	/**
-	 * main·½·¨
+	 * mainæ–¹æ³•
 	 */
 	public static void main(String[] args) {
-		System.out.println("-------------»¶Ó­Ê¹ÓÃ-------------");
-		System.out.println("@×÷Õß  Mr.Wang");
+		System.out.println("-------------æ¬¢è¿ä½¿ç”¨-------------");
+		System.out.println("@ä½œè€…  Mr.Wang");
 		System.out.println("\t\t\t2018-08-12");
-		SplashScreen splashScreen = SplashScreen.getSplashScreen();// ´´½¨ÉÁÏÖÆÁÄ»¶ÔÏó
-		if (!(splashScreen == null)) {// ÉÁÏÖÆÁÄ»¶ÔÏó²»Îª¿Õ
+		SplashScreen splashScreen = SplashScreen.getSplashScreen();// åˆ›å»ºé—ªç°å±å¹•å¯¹è±¡
+		if (!(splashScreen == null)) {// é—ªç°å±å¹•å¯¹è±¡ä¸ä¸ºç©º
 			try {
-				Thread.sleep(3000);// Ïß³ÌĞİÃß3Ãë
+				Thread.sleep(3000);// çº¿ç¨‹ä¼‘çœ 3ç§’
 			} catch (InterruptedException e) {
 			}
 		}
-		new Otherwin().Sign(); // µ¯³öÃâÔğÉùÃ÷
+		new Otherwin().Sign(); // å¼¹å‡ºå…è´£å£°æ˜
 	}
 
 	/**
-	 * Ğ´ÎÄ¼ş·½·¨
+	 * å†™æ–‡ä»¶æ–¹æ³•
 	 */
 	private void writeFiles() {
-		if (f4.exists()) {// ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+		if (f4.exists()) {// åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 			try {
-				FileOutputStream out = new FileOutputStream(f4);// ´´½¨Êä³öÁ÷
+				FileOutputStream out = new FileOutputStream(f4);// åˆ›å»ºè¾“å‡ºæµ
 				String s;
 				s = Servant.xu.honey + "." + Servant.xu.cost + "." + Customer.chu.money + "." + Customer.chu.success;
-				// Ğ´ÈëµÄĞÅÏ¢Îª:Ç×ÃÜ¶È,»¨·Ñ,½ğÇ®,ÊÇ·ñ³É¹¦
+				// å†™å…¥çš„ä¿¡æ¯ä¸º:äº²å¯†åº¦,èŠ±è´¹,é‡‘é’±,æ˜¯å¦æˆåŠŸ
 				byte[] b = s.getBytes();
 				try {
-					out.write(b);// Ğ´ÈëĞÅÏ¢
-					out.close();// ¹Ø±ÕÁ÷
+					out.write(b);// å†™å…¥ä¿¡æ¯
+					out.close();// å…³é—­æµ
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
-		} else {// Èô²»´æÔÚ£¬Ôò´´½¨ÎÄ¼şºóĞ´ÈëÊı¾İ
+		} else {// è‹¥ä¸å­˜åœ¨ï¼Œåˆ™åˆ›å»ºæ–‡ä»¶åå†™å…¥æ•°æ®
 			try {
 				f4.createNewFile();
-				writeFiles();// µİ¹éÒ»´ÎºóÖÕÖ¹
+				writeFiles();// é€’å½’ä¸€æ¬¡åç»ˆæ­¢
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("writeFiles·½·¨Õı³££¡");
+		System.out.println("writeFilesæ–¹æ³•æ­£å¸¸ï¼");
 	}
 
 	/**
-	 * ³õÊ¼»¯ÎÄ¼ş¶ÔÏó·½·¨
+	 * åˆå§‹åŒ–æ–‡ä»¶å¯¹è±¡æ–¹æ³•
 	 */
 	private void inFiles() {
 		String jar = MainFrame.class.getProtectionDomain().getCodeSource().getLocation().getFile();
@@ -98,31 +98,31 @@ public class MainFrame  {
 			e.printStackTrace();
 		}
 		String path = new File(jar).getParentFile().getAbsolutePath();
-		f4 = new File(path + "/config.txt");// ÕÒµ½jar°üËùÔÚµÄÎÄ¼ş¼ĞµÄ¾ø¶ÔÂ·¾¶
+		f4 = new File(path + "/config.txt");// æ‰¾åˆ°jaråŒ…æ‰€åœ¨çš„æ–‡ä»¶å¤¹çš„ç»å¯¹è·¯å¾„
 	}
 
 	/**
-	 * ¶ÁÎÄ¼ş·½·¨
+	 * è¯»æ–‡ä»¶æ–¹æ³•
 	 */
 	private void readFiles() {
-		if (!f4.exists()) {// Èç¹ûÎÄ¼ş²»´æÔÚ£¬Ôò´´½¨ÎÄ¼ş£¬²¢½«Êı¾İĞ´ÈëÎÄ¼ş
+		if (!f4.exists()) {// å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨ï¼Œåˆ™åˆ›å»ºæ–‡ä»¶ï¼Œå¹¶å°†æ•°æ®å†™å…¥æ–‡ä»¶
 			try {
 				f4.createNewFile();
 				writeFiles();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		} else {// ÈôÎÄ¼ş´æÔÚ£¬Ôò¶ÁÈ¡ÎÄ¼şÊı¾İ
+		} else {// è‹¥æ–‡ä»¶å­˜åœ¨ï¼Œåˆ™è¯»å–æ–‡ä»¶æ•°æ®
 			try {
 				FileInputStream in = new FileInputStream(f4);
 				byte[] b = new byte[1024];
 				try {
 					int len = in.read(b);
 					String str = new String(b, 0, len);
-					//ÎÄ¼şÖĞµÄĞÅÏ¢
-					in.close();// ¹Ø±ÕÁ÷
-					if (str.matches("\\d{1,3}\\.\\d+\\.\\d+\\..+")) {// Ê¹ÓÃÕıÔò±í´ïÊ½ÅĞ¶ÏÎÄ¼şÊı¾İÊÇ·ñ±»ĞÜº¢×Ó´Û¸Ä
-						String[] s = str.split("\\.");// ½«ÎÄ¼şÖĞµÄĞÅÏ¢·Ö¸î´¦Àí
+					//æ–‡ä»¶ä¸­çš„ä¿¡æ¯
+					in.close();// å…³é—­æµ
+					if (str.matches("\\d{1,3}\\.\\d+\\.\\d+\\..+")) {// ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼åˆ¤æ–­æ–‡ä»¶æ•°æ®æ˜¯å¦è¢«ç†Šå­©å­ç¯¡æ”¹
+						String[] s = str.split("\\.");// å°†æ–‡ä»¶ä¸­çš„ä¿¡æ¯åˆ†å‰²å¤„ç†
 						for (String x : s) {
 							System.out.println(x);
 						}
@@ -131,9 +131,9 @@ public class MainFrame  {
 						Customer.chu.money = Integer.parseInt(s[2]);
 						Boolean b2 = new Boolean(s[3]);
 						Customer.chu.success = b2.booleanValue();
-						// ¶ÁÈ¡Êı¾İ
-						retext();// ÖØÖÃ±êÇ©
-					} else {// Èç¹û±»ĞÜº¢×Ó´Û¸Ä£¬ÔòÖØĞÂĞ´ÈëÊı¾İ
+						// è¯»å–æ•°æ®
+						retext();// é‡ç½®æ ‡ç­¾
+					} else {// å¦‚æœè¢«ç†Šå­©å­ç¯¡æ”¹ï¼Œåˆ™é‡æ–°å†™å…¥æ•°æ®
 						writeFiles();
 					}
 				} catch (IOException e) {
@@ -143,50 +143,50 @@ public class MainFrame  {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("readFiles·½·¨Õı³££¡");
+		System.out.println("readFilesæ–¹æ³•æ­£å¸¸ï¼");
 	}
 
 	/**
-	 * ³õÊ¼»¯Ö÷´°Ìå·½·¨
+	 * åˆå§‹åŒ–ä¸»çª—ä½“æ–¹æ³•
 	 */
 	void creatframe() {
-		mainframe.setSize(780, 500);// ÉèÖÃÖ÷´°Ìå´óĞ¡
-		mainframe.setResizable(false);// Ö÷´°Ìå²»ÄÜËõ·Å
-		mainframe.setLayout(null);// Ö÷´°ÌåÊ¹ÓÃ¾ø¶Ô²¼¾Ö
-		//Dimension size = getToolkit().getScreenSize();// »ñµÃÆÁÄ»³ß´ç
-		mainframe.setLocationRelativeTo(null);// ÉèÖÃ´°Ìåµ¯³öÎ»ÖÃ
-		mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);// ÉèÖÃ´°Ìå¹Ø±Õ·½Ê½
-		cc = mainframe.getContentPane();// »ñÈ¡ÈİÆ÷¶ÔÏó
-		putlabels();// ³õÊ¼»¯±êÇ©·½·¨
-		putbuttons();// ³öÊÂ¹ş°´Å¥·½·¨
-		inFiles();// ³õÊ¼»¯ÎÄ¼ş·½·¨
-		readFiles();// ¶ÁÈ¡ÎÄ¼ş·½·¨
-		writeFiles();// Ğ´ÎÄ¼ş·½·¨
-		System.out.println("Ö÷´°ÌåÕı³££¡");
-		thread();// ²ÉÓÃ¶àÏß³Ì
-		mainframe.setVisible(true);// Ê¹Ö÷´°Ìå¿É¼û
+		mainframe.setSize(780, 500);// è®¾ç½®ä¸»çª—ä½“å¤§å°
+		mainframe.setResizable(false);// ä¸»çª—ä½“ä¸èƒ½ç¼©æ”¾
+		mainframe.setLayout(null);// ä¸»çª—ä½“ä½¿ç”¨ç»å¯¹å¸ƒå±€
+		//Dimension size = getToolkit().getScreenSize();// è·å¾—å±å¹•å°ºå¯¸
+		mainframe.setLocationRelativeTo(null);// è®¾ç½®çª—ä½“å¼¹å‡ºä½ç½®
+		mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);// è®¾ç½®çª—ä½“å…³é—­æ–¹å¼
+		cc = mainframe.getContentPane();// è·å–å®¹å™¨å¯¹è±¡
+		putlabels();// åˆå§‹åŒ–æ ‡ç­¾æ–¹æ³•
+		putbuttons();// å‡ºäº‹å“ˆæŒ‰é’®æ–¹æ³•
+		inFiles();// åˆå§‹åŒ–æ–‡ä»¶æ–¹æ³•
+		readFiles();// è¯»å–æ–‡ä»¶æ–¹æ³•
+		writeFiles();// å†™æ–‡ä»¶æ–¹æ³•
+		System.out.println("ä¸»çª—ä½“æ­£å¸¸ï¼");
+		thread();// é‡‡ç”¨å¤šçº¿ç¨‹
+		mainframe.setVisible(true);// ä½¿ä¸»çª—ä½“å¯è§
 	}
 
 	/**
-	 * ³õÊ¼»¯°´Å¥·½·¨
+	 * åˆå§‹åŒ–æŒ‰é’®æ–¹æ³•
 	 */
 	private void putbuttons() {
-		JButton piao = new JButton("æÎËû");// ´´½¨°´Å¥¶ÔÏó
-		JButton liao = new JButton("ÁÃËû");
-		JButton forever = new JButton("ÓÀ  ¾Ã  °×  æÎ");
-		JButton da = new JButton("´ò¹¤×¬Ç®");
-		JButton tui = new JButton("ÍË³ö");
-		JButton re = new JButton("ÖØÀ´");
-		JButton cun = new JButton("±£´æ");
+		JButton piao = new JButton("å«–ä»–");// åˆ›å»ºæŒ‰é’®å¯¹è±¡
+		JButton liao = new JButton("æ’©ä»–");
+		JButton forever = new JButton("æ°¸  ä¹…  ç™½  å«–");
+		JButton da = new JButton("æ‰“å·¥èµšé’±");
+		JButton tui = new JButton("é€€å‡º");
+		JButton re = new JButton("é‡æ¥");
+		JButton cun = new JButton("ä¿å­˜");
 		new Otherwin().reTell();
-		piao.setBounds(150, 250, 200, 50);// ÉèÖÃ´°ÌåÎ»ÖÃ
+		piao.setBounds(150, 250, 200, 50);// è®¾ç½®çª—ä½“ä½ç½®
 		liao.setBounds(400, 250, 200, 50);
 		forever.setBounds(150, 350, 450, 50);
 		da.setBounds(550, 100, 200, 50);
 		tui.setBounds(690, 400, 80, 50);
 		re.setBounds(5, 400, 80, 50);
 		cun.setBounds(5, 300, 80, 50);
-		cc.add(piao);// ½«°´Å¥Ìí¼ÓÖÁÈİÆ÷ÖĞ
+		cc.add(piao);// å°†æŒ‰é’®æ·»åŠ è‡³å®¹å™¨ä¸­
 		cc.add(liao);
 		cc.add(forever);
 		cc.add(da);
@@ -194,18 +194,18 @@ public class MainFrame  {
 		cc.add(re);
 		cc.add(cun);
 		Selection.addSelections();
-		// Îª°´Å¥Ìí¼ÓÊó±êµ¥»÷ÊÂ¼ş
+		// ä¸ºæŒ‰é’®æ·»åŠ é¼ æ ‡å•å‡»äº‹ä»¶
 		liao.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (!Customer.chu.success) {
 					if (Customer.chu.flirt()) {
-						new Otherwin().communicate("µ÷Ï·³É¹¦");// µ¯³ö¶Ô»°¿ò·½·¨;
+						new Otherwin().communicate("è°ƒæˆæˆåŠŸ");// å¼¹å‡ºå¯¹è¯æ¡†æ–¹æ³•;
 					} else {
-						new Otherwin().communicate("µ÷Ï·Ê§°Ü");
+						new Otherwin().communicate("è°ƒæˆå¤±è´¥");
 					}
-					retext();// ÖØÖÃ±êÇ©·½·¨
+					retext();// é‡ç½®æ ‡ç­¾æ–¹æ³•
 				}
 
 			}
@@ -217,15 +217,15 @@ public class MainFrame  {
 			public void actionPerformed(ActionEvent e) {
 				if (!Customer.chu.success) {
 					if (Customer.chu.money - Servant.xu.cost - Selection.getCost((String) Selection.jc.getSelectedItem())>= 0) {
-						//ÅĞ¶ÏÇ®ÊÇ·ñ¹»ÓÃ
+						//åˆ¤æ–­é’±æ˜¯å¦å¤Ÿç”¨
 						if (Customer.chu.prostitute()) {
-							new Otherwin().communicate("æÎæ½³É¹¦");
+							new Otherwin().communicate("å«–å¨¼æˆåŠŸ");
 						} else {
-							new Otherwin().communicate("æÎæ½Ê§°Ü");
+							new Otherwin().communicate("å«–å¨¼å¤±è´¥");
 						}
 						retext();
 					} else {
-						new Otherwin().communicate("Ç®²»¹»°¡");
+						new Otherwin().communicate("é’±ä¸å¤Ÿå•Š");
 					}
 				}
 			}
@@ -240,11 +240,11 @@ public class MainFrame  {
 						Customer.chu.money -= 20000;
 						Servant.xu.honey = 100;
 						Servant.xu.recost();
-						retext();// ÖØÖÃ±êÇ©·½·¨
+						retext();// é‡ç½®æ ‡ç­¾æ–¹æ³•
 						Customer.chu.success = true;
-						new Otherwin().communicate("ÓÀ¾Ã°×æÎ³É¹¦");
+						new Otherwin().communicate("æ°¸ä¹…ç™½å«–æˆåŠŸ");
 					} else {
-						new Otherwin().communicate("Ç®²»¹»°¡");
+						new Otherwin().communicate("é’±ä¸å¤Ÿå•Š");
 					}
 				}
 
@@ -254,21 +254,21 @@ public class MainFrame  {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JDialog jd = new JDialog(MainFrame.mainframe, "ÍõÊÏ¼¯ÍÅÌáĞÑÄú", true);
+				JDialog jd = new JDialog(MainFrame.mainframe, "ç‹æ°é›†å›¢æé†’æ‚¨", true);
 				jd.setLayout(null);
 				jd.setResizable(false);
 				Container cc = jd.getContentPane();
 				
 				
 				jd.setSize(400, 250);
-				JLabel jl = new JLabel("»¶Ó­Ç°À´°á×©");
+				JLabel jl = new JLabel("æ¬¢è¿å‰æ¥æ¬ç –");
 				jl.setFont(new Font("", 0, 20));
 				int a = jl.getText().length();
 				jl.setBounds(195 - (a * 18) / 2, 18, 200, 80);
 				cc.add(jl);
-				JButton jb = new JButton("È·¶¨");
+				JButton jb = new JButton("ç¡®å®š");
 				jd.setLocationRelativeTo(jb);
-				jb.setEnabled(false);// Ê¹°´Å¥²»¿ÉÓÃ
+				jb.setEnabled(false);// ä½¿æŒ‰é’®ä¸å¯ç”¨
 				jb.setBounds(140, 160, 100, 30);
 				cc.setBackground(new Color(245, 245, 245));
 				cc.add(jb);
@@ -279,11 +279,11 @@ public class MainFrame  {
 						jd.setVisible(false);
 					}
 				});
-				JProgressBar jp = new JProgressBar();// ´´½¨½ø¶ÈÌõ
-				jp.setBackground(Color.GREEN);// ½ø¶ÈÌõÑÕÉ«ÉèÖÃÎªÂÌÉ«
+				JProgressBar jp = new JProgressBar();// åˆ›å»ºè¿›åº¦æ¡
+				jp.setBackground(Color.GREEN);// è¿›åº¦æ¡é¢œè‰²è®¾ç½®ä¸ºç»¿è‰²
 				jp.setBounds(63, 100, 275, 20);
 				cc.add(jp);
-				new Thread(new Runnable() {// ¿ØÖÆ½ø¶ÈÌõµÄ½ø¶È
+				new Thread(new Runnable() {// æ§åˆ¶è¿›åº¦æ¡çš„è¿›åº¦
 
 					@Override
 					public void run() {
@@ -295,13 +295,13 @@ public class MainFrame  {
 								e1.printStackTrace();
 							}
 						}
-						jl.setText("  ´ò¹¤Íê³É");
+						jl.setText("  æ‰“å·¥å®Œæˆ");
 						Customer.chu.money += Customer.chu.work();
 						retext();
-						jb.setEnabled(true);// Ê¹°´Å¥¿ÉÓÃ
+						jb.setEnabled(true);// ä½¿æŒ‰é’®å¯ç”¨
 					}
 				}).start();
-				System.out.println("¶Ô»°¿òµ¯³öÕı³££¡");
+				System.out.println("å¯¹è¯æ¡†å¼¹å‡ºæ­£å¸¸ï¼");
 				jd.setVisible(true);
 			}
 		});
@@ -309,11 +309,11 @@ public class MainFrame  {
 		tui.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("ÍË³öÕı³££¡");
-				new Otherwin().communicate("ÕæµÄÍË³öÂğ?", new Button() {
+				System.out.println("é€€å‡ºæ­£å¸¸ï¼");
+				new Otherwin().communicate("çœŸçš„é€€å‡ºå—?", new Button() {
 					@Override
 					public void doIt() {
-						Otherwin.jd.setVisible(false);// Ê¹ÓÃButton½Ó¿ÚÎª°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş
+						Otherwin.jd.setVisible(false);// ä½¿ç”¨Buttonæ¥å£ä¸ºæŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶
 						System.exit(0);
 					}
 				});
@@ -322,19 +322,19 @@ public class MainFrame  {
 		re.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JDialog jd = new JDialog(MainFrame.mainframe, "ÍõÊÏ¼¯ÍÅÌáĞÑÄú", true);
+				JDialog jd = new JDialog(MainFrame.mainframe, "ç‹æ°é›†å›¢æé†’æ‚¨", true);
 				jd.setLayout(null);
 				jd.setResizable(false);
 				Container cc = jd.getContentPane();
 				
 				
 				jd.setSize(300, 180);
-				JLabel jl = new JLabel("ÕæµÄÖØÀ´Âğ?");
+				JLabel jl = new JLabel("çœŸçš„é‡æ¥å—?");
 				jl.setFont(new Font("", 0, 20));
 				int a = jl.getText().length();
 				jl.setBounds(135 - (a * 18) / 2, 18, 200, 80);
 				cc.add(jl);
-				JButton jb = new JButton("È·¶¨");
+				JButton jb = new JButton("ç¡®å®š");
 				jd.setLocationRelativeTo(jb);
 				jb.setBounds(90, 95, 100, 30);
 				cc.setBackground(new Color(245, 245, 245));
@@ -350,7 +350,7 @@ public class MainFrame  {
 						jd.setVisible(false);
 					}
 				});
-				System.out.println("¶Ô»°¿òµ¯³öÕı³££¡");
+				System.out.println("å¯¹è¯æ¡†å¼¹å‡ºæ­£å¸¸ï¼");
 				jd.setVisible(true);
 			}
 		});
@@ -358,22 +358,22 @@ public class MainFrame  {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				writeFiles();
-				new Otherwin().communicate("±£´æ³É¹¦");
-				System.out.println("±£´æÕı³£");
+				new Otherwin().communicate("ä¿å­˜æˆåŠŸ");
+				System.out.println("ä¿å­˜æ­£å¸¸");
 			}
 		});
 	}
 
 	/**
-	 * ³õÊ¼»¯±êÇ©·½·¨
+	 * åˆå§‹åŒ–æ ‡ç­¾æ–¹æ³•
 	 */
 	private void putlabels() {
-		name.setFont(new Font("", 0, 15));// ÉèÖÃ±êÇ©×ÖÌå
+		name.setFont(new Font("", 0, 15));// è®¾ç½®æ ‡ç­¾å­—ä½“
 		honey.setFont(new Font("", 0, 15));
 		cost.setFont(new Font("", 0, 15));
 		money.setFont(new Font("", 0, 15));
-		name.setBounds(250, 10, 200, 30);// ÉèÖÃ±êÇ©Î»ÖÃ
-		cc.add(name);// ½«±êÇ©Ìí¼ÓÖÁÈİÆ÷ÖĞ
+		name.setBounds(250, 10, 200, 30);// è®¾ç½®æ ‡ç­¾ä½ç½®
+		cc.add(name);// å°†æ ‡ç­¾æ·»åŠ è‡³å®¹å™¨ä¸­
 		honey.setBounds(250, 80, 200, 30);
 		cc.add(honey);
 		cost.setBounds(250, 150, 200, 30);
@@ -383,30 +383,30 @@ public class MainFrame  {
 	}
 
 	/**
-	 * ÖØÖÃ±êÇ©·½·¨
+	 * é‡ç½®æ ‡ç­¾æ–¹æ³•
 	 */
 	private void retext() {
-		honey.setText("Ç×ÃÜ¶È£º" + Servant.xu.honey);
-		money.setText("½ğÇ®£º " + Customer.chu.money);
-		cost.setText("»¨·Ñ£º " + Servant.xu.cost);
+		honey.setText("äº²å¯†åº¦ï¼š" + Servant.xu.honey);
+		money.setText("é‡‘é’±ï¼š " + Customer.chu.money);
+		cost.setText("èŠ±è´¹ï¼š " + Servant.xu.cost);
 	}
 
 	/**
-	 * ¶àÏß³Ì
+	 * å¤šçº¿ç¨‹
 	 */
 	private void thread() {
 		Thread t1 = new Thread(new Runnable() {
 
 			@Override
-			public void run() {// ÖØĞ´run·½·¨
-				new Drawicon().draw();// »æÖÆÍ¼Æ¬Ïß³Ì
+			public void run() {// é‡å†™runæ–¹æ³•
+				new Drawicon().draw();// ç»˜åˆ¶å›¾ç‰‡çº¿ç¨‹
 				showFish();
 				int R, G, B;
 				R = 50;
 				G = 100;
 				B = 100;
 				boolean[] b = { true, true, true };
-				while (true) {// ÑÕÉ«½¥±ä
+				while (true) {// é¢œè‰²æ¸å˜
 					if (b[0]) {
 						R += 2;
 					} else {
@@ -438,7 +438,7 @@ public class MainFrame  {
 						b[2] = true;
 					}
 					try {
-						Thread.sleep(20);// ĞİÃß20ºÁÃ×£¬ÒÔ´ïµ½Ã¿Ãë50Ö¡
+						Thread.sleep(20);// ä¼‘çœ 20æ¯«ç±³ï¼Œä»¥è¾¾åˆ°æ¯ç§’50å¸§
 					} catch (InterruptedException e) {
 
 						e.printStackTrace();
@@ -449,23 +449,23 @@ public class MainFrame  {
 				}
 			}
 		});
-		t1.start();// Æô¶¯Ïß³Ì
+		t1.start();// å¯åŠ¨çº¿ç¨‹
 	}
 
 	/**
-	 * µã»÷ÕÕÆ¬£¬ÏÔÊ¾ÀÏÓÚµÄÍ·Ïñ
+	 * ç‚¹å‡»ç…§ç‰‡ï¼Œæ˜¾ç¤ºè€äºçš„å¤´åƒ
 	 */
 	private void showFish() {
-		URL url = getClass().getResource("/res/fish.png");//»ñÈ¡Í¼Æ¬µÄURlÂ·¾¶
+		URL url = getClass().getResource("/res/fish.png");//è·å–å›¾ç‰‡çš„URlè·¯å¾„
 		Drawicon.photo.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent arg0) {//¸øÍ¼Æ¬Ìí¼ÓÊó±êµã»÷ÊÂ¼ş
+			public void actionPerformed(ActionEvent arg0) {//ç»™å›¾ç‰‡æ·»åŠ é¼ æ ‡ç‚¹å‡»äº‹ä»¶
 				JFrame jf = new JFrame("Old Fish");
 				jf.setLocationRelativeTo(Drawicon.photo);
 				jf.setSize(320, 325);
 				jf.setResizable(false);
 				Container co = jf.getContentPane();
-				JLabel jl = new JLabel();//ÓÃ±êÇ©µÄĞÎÊ½±£´æÍ¼Æ¬
+				JLabel jl = new JLabel();//ç”¨æ ‡ç­¾çš„å½¢å¼ä¿å­˜å›¾ç‰‡
 				Icon ic = new ImageIcon(url);
 				jl.setIcon(ic);
 				co.add(jl);
@@ -474,6 +474,6 @@ public class MainFrame  {
 				jf.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 			}
 		});
-		System.out.println("ÒôÀÖÒÑ¼ÓÔØ!");
+		System.out.println("è€äºçš„å¤´åƒå·²åŠ è½½!");
 	}
 }
